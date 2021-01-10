@@ -19,24 +19,20 @@ int main() {
         freopen("output.txt", "w", stdout);
     #endif
 
-    ll t,n,k,q;
-    cin>>t;
-    while(t--){
-        cin>>n;
-        ll cnt = 0;
-        q = 0;
-        ll r = INT_MAX;
-        while(n--){
-            cin>>q;
-            if(q <= r){
-                cnt++;
-                r = q;
-            }
-            
+	ll t,n,k,q;
+	cin>>t;
+	while(t--){
+	    cin>>n;
+        int i = 1;
+        int cnt = 0;
+        
+        while(pow(5,i) <= n){
+            cnt += (n/pow(5,i));
+            i++;
         }
         cout<<cnt<<"\n";
-    }
-    
-    
+	}
+	
+	
     return 0;
 }
